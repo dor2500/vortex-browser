@@ -159,3 +159,4 @@ document.documentElement.setAttribute('data-theme', currentTheme);
 applyLanguage();
 setInterval(updateClock, 1000);
 updateClock();
+

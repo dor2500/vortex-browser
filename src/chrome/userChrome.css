@@ -259,3 +259,22 @@ menuitem:hover, menu:hover {
   background-color: var(--vortex-bg-hover) !important;
   color: var(--vortex-accent) !important;
 }
+
+/* ==============================================================================
+   6. Picture-in-Picture (Window-in-Window) Controls
+   ============================================================================== */
+
+#picture-in-picture-button,
+.picture-in-picture-icon {
+  fill: var(--vortex-accent) !important;
+  color: var(--vortex-accent) !important;
+  transition: all 0.2s ease !important;
+}
+
+#picture-in-picture-button:hover {
+  background: var(--vortex-bg-hover) !important;
+  box-shadow: 0 0 12px var(--vortex-accent-glow) !important;
+  transform: scale(1.08) !important;
+}
+
+

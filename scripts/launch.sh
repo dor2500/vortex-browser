@@ -35,3 +35,4 @@ echo "✔️ Profile prepared at: $PROFILE_DIR"
 echo "🚀 Launching Vortex Browser..."
 
 exec "$GECKO_EXE" -no-remote -profile "$PROFILE_DIR" "$NEWTAB_URI"
+

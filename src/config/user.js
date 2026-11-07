@@ -43,6 +43,17 @@ user_pref("dom.security.https_only_mode", true);
 user_pref("dom.security.https_only_mode_ever_enabled", true);
 user_pref("network.cookie.cookieBehavior", 5); // Total Cookie Protection
 
+// --- Picture-in-Picture (Window-in-Window) Built-in Superpowers ---
+user_pref("media.videocontrols.picture-in-picture.enabled", true);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.enabled", true);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.always-show", true);
+user_pref("media.videocontrols.picture-in-picture.video-toggle.flyout-enabled", true);
+user_pref("media.videocontrols.picture-in-picture.urlbar-button.enabled", true);
+user_pref("media.videocontrols.picture-in-picture.keyboard-controls.enabled", true);
+user_pref("media.videocontrols.picture-in-picture.display-text-tracks.enabled", true);
+user_pref("media.videocontrols.picture-in-picture.auto-pip", true);
+user_pref("media.videocontrols.picture-in-picture.respect-disablePictureInPicture", false);
+
 // --- Disable Mozilla Telemetry, Studies & Sponsored Bloat ---
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
@@ -64,3 +75,4 @@ user_pref("browser.newtabpage.activity-stream.showSponsored", false);
 user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 user_pref("extensions.pocket.enabled", false);
 user_pref("identity.fxaccounts.enabled", true); // Keep Sync available if user desires
+

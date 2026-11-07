@@ -15,3 +15,4 @@ if (fs.existsSync(profileDir)) {
 } else {
   console.log('✨ Already clean.');
 }
+

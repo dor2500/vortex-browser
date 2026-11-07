@@ -54,3 +54,26 @@
     background-color: #08090d !important;
   }
 }
+
+/* ==============================================================================
+   Picture-in-Picture (PiP / Window-in-Window) Video Trigger
+   Styling the Gecko PiP floating toggle button for YouTube & video sites
+   ============================================================================== */
+
+.picture-in-picture-toggle {
+  border-radius: 20px !important;
+  background: rgba(15, 17, 24, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(99, 102, 241, 0.4) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.picture-in-picture-toggle:hover {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(168, 85, 247, 0.85)) !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 6px 24px rgba(99, 102, 241, 0.6) !important;
+  transform: scale(1.05) !important;
+}
+
+

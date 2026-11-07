@@ -1,4 +1,4 @@
-﻿# ==============================================================================
+# ==============================================================================
 # Vortex Browser - Dedicated Gecko Engine Launcher
 # Boots an isolated Gecko environment with Vortex Cyber-Chrome
 # ==============================================================================
@@ -67,3 +67,4 @@ Write-Host "🚀 Launching Vortex Browser..." -ForegroundColor Cyan
 Start-Process -FilePath $GeckoExe -ArgumentList "-no-remote", "-profile `"$ProfileDir`"", "$NewTabUri"
 
 Write-Host "✔️ Vortex Browser running!" -ForegroundColor Green
+

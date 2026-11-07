@@ -25,3 +25,4 @@ fs.copyFileSync(
 
 console.log('✅ Chrome stylesheets synced.');
 console.log('✅ Build complete!');
+
