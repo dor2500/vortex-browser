@@ -1,0 +1,25 @@
+{
+  "name": "vortex-browser",
+  "version": "1.0.0",
+  "description": "A next-generation browser built on the Mozilla Gecko engine with a radical floating canvas, vertical spaces, and cyber-minimalist design.",
+  "main": "scripts/launch.js",
+  "type": "module",
+  "scripts": {
+    "start": "powershell -ExecutionPolicy Bypass -File ./scripts/launch.ps1",
+    "start:linux": "bash ./scripts/launch.sh",
+    "build": "node ./scripts/build.mjs",
+    "clean": "node ./scripts/clean.mjs"
+  },
+  "keywords": [
+    "browser",
+    "gecko",
+    "firefox-engine",
+    "vertical-tabs",
+    "workspaces",
+    "zen-inspired",
+    "drift-browser",
+    "cyber-minimalism"
+  ],
+  "author": "dor2500",
+  "license": "MIT"
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="obsidian">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vortex Browser</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../../assets/icon.svg" type="image/svg+xml">
+</head>
+<body>
+  <div class="vortex-container">
+    <!-- Top Bar: Spaces & Controls -->
+    <header class="top-nav">
+      <div class="spaces-switcher" id="spacesBar">
+        <button class="space-pill active" data-space="core">
+          <span class="space-icon">⚡</span>
+          <span class="space-label" data-i18n="space_core">ראשי</span>
+        </button>
+        <button class="space-pill" data-space="work">
+          <span class="space-icon">💼</span>
+          <span class="space-label" data-i18n="space_work">עבודה</span>
+        </button>
+        <button class="space-pill" data-space="dev">
+          <span class="space-icon">🧪</span>
+          <span class="space-label" data-i18n="space_dev">פיתוח</span>
+        </button>
+        <button class="space-pill" data-space="media">
+          <span class="space-icon">🎮</span>
+          <span class="space-label" data-i18n="space_media">מדיה</span>
+        </button>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="langToggle" title="החלף שפה / Switch Language">
+          <span id="langText">EN</span>
+        </button>
+        <button class="icon-btn" id="themeToggle" title="החלף ערכת נושא">
+          <span>🎨</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section: Clock & Greeting -->
+    <main class="hero-section">
+      <div class="brand-badge">
+        <span class="gecko-dot"></span>
+        <span class="gecko-title">GECKO QUANTUM ENGINE</span>
+      </div>
+
+      <div class="time-display" id="clockDisplay">12:00</div>
+      <div class="date-display" id="dateDisplay">יום ראשון, 1 בינואר</div>
+      <div class="greeting-display" id="greetingDisplay">ברוך הבא ל-Vortex</div>
+
+      <!-- Omnibar Search Box -->
+      <form class="search-box" id="searchForm">
+        <div class="engine-selector">
+          <button type="button" class="engine-btn" id="engineBtn" title="בחר מנוע חיפוש">
+            <span id="engineIcon">🔍</span>
+          </button>
+          <div class="engine-dropdown" id="engineMenu">
+            <div class="engine-item" data-engine="google">Google</div>
+            <div class="engine-item" data-engine="duckduckgo">DuckDuckGo</div>
+            <div class="engine-item" data-engine="brave">Brave Search</div>
+            <div class="engine-item" data-engine="bing">Bing</div>
+            <div class="engine-item" data-engine="startpage">Startpage</div>
+          </div>
+        </div>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="חפש באינטרנט או הזן כתובת URL..." 
+          autocomplete="off" 
+          autofocus
+        >
+        <button type="submit" class="search-submit">
+          <span>↵</span>
+        </button>
+      </form>
+
+      <!-- Speed Dials (Essentials) -->
+      <div class="speed-dials" id="dialsGrid">
+        <a href="https://github.com" class="dial-card">
+          <div class="dial-icon">🐙</div>
+          <div class="dial-name">GitHub</div>
+        </a>
+        <a href="https://youtube.com" class="dial-card">
+          <div class="dial-icon">▶️</div>
+          <div class="dial-name">YouTube</div>
+        </a>
+        <a href="https://chatgpt.com" class="dial-card">
+          <div class="dial-icon">🤖</div>
+          <div class="dial-name">ChatGPT</div>
+        </a>
+        <a href="https://reddit.com" class="dial-card">
+          <div class="dial-icon">💬</div>
+          <div class="dial-name">Reddit</div>
+        </a>
+        <a href="https://x.com" class="dial-card">
+          <div class="dial-icon">𝕏</div>
+          <div class="dial-name">X (Twitter)</div>
+        </a>
+        <a href="https://mail.google.com" class="dial-card">
+          <div class="dial-icon">✉️</div>
+          <div class="dial-name">Gmail</div>
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer: Shield Status -->
+    <footer class="footer-bar">
+      <div class="privacy-badge">
+        <span class="shield-icon">🛡️</span>
+        <span data-i18n="privacy_status">חסימת מעקב מתקדמת פעילה • מנוע Gecko 159+</span>
+      </div>
+      <div class="engine-version">Vortex Browser v1.0</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

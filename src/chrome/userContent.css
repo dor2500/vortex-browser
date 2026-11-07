@@ -1,0 +1,56 @@
+/* ==============================================================================
+   VORTEX BROWSER - WEB CONTENT & INTERNAL PAGES STYLESHEET
+   ============================================================================== */
+
+@-moz-document url("about:blank"), url("about:newtab"), url("about:home") {
+  body {
+    background-color: #08090d !important;
+    color: #f8fafc !important;
+  }
+}
+
+/* Global Modern Minimalist Scrollbars across Gecko Engine */
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.6) !important;
+}
+
+/* Custom styling for about:preferences */
+@-moz-document url-prefix("about:preferences") {
+  :root {
+    --in-content-page-background: #08090d !important;
+    --in-content-box-background: #0f1118 !important;
+    --in-content-page-color: #f8fafc !important;
+    --in-content-text-color: #f8fafc !important;
+    --in-content-deemphasized-text: #94a3b8 !important;
+    --in-content-primary-button-background: #6366f1 !important;
+    --in-content-primary-button-background-hover: #4f46e5 !important;
+  }
+  
+  .navigation {
+    background-color: #0c0e14 !important;
+    border-inline-end: 1px solid rgba(255, 255, 255, 0.07) !important;
+  }
+
+  .main-content {
+    background-color: #08090d !important;
+  }
+}

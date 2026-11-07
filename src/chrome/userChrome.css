@@ -1,0 +1,261 @@
+/* ==============================================================================
+   VORTEX BROWSER - ULTRA-MODERN GECKO CHROME
+   Radical Redesign: Floating Canvas, Vertical Cyber-Dock, Pill Omnibar
+   ============================================================================== */
+
+:root {
+  --vortex-bg-base: #08090d;
+  --vortex-bg-surface: #0f1118;
+  --vortex-bg-card: #161824;
+  --vortex-bg-hover: rgba(255, 255, 255, 0.06);
+  --vortex-bg-active: rgba(99, 102, 241, 0.18);
+  
+  --vortex-accent: #6366f1;
+  --vortex-accent-secondary: #a855f7;
+  --vortex-accent-glow: rgba(99, 102, 241, 0.4);
+  
+  --vortex-text-primary: #f8fafc;
+  --vortex-text-secondary: #94a3b8;
+  --vortex-text-muted: #64748b;
+  
+  --vortex-border-subtle: rgba(255, 255, 255, 0.07);
+  --vortex-border-active: rgba(99, 102, 241, 0.5);
+  
+  --vortex-canvas-radius: 14px;
+  --vortex-sidebar-width: 250px;
+  --vortex-sidebar-collapsed-width: 60px;
+  
+  /* Overwrite Firefox default skin variables */
+  --toolbar-bgcolor: var(--vortex-bg-base) !important;
+  --toolbar-color: var(--vortex-text-primary) !important;
+  --tab-selected-bgcolor: var(--vortex-bg-card) !important;
+  --tab-selected-textcolor: var(--vortex-text-primary) !important;
+  --toolbar-field-background-color: var(--vortex-bg-card) !important;
+  --toolbar-field-color: var(--vortex-text-primary) !important;
+  --toolbar-field-focus-background-color: var(--vortex-bg-surface) !important;
+  --toolbar-field-focus-color: var(--vortex-text-primary) !important;
+  --arrowpanel-background: var(--vortex-bg-surface) !important;
+  --arrowpanel-color: var(--vortex-text-primary) !important;
+  --arrowpanel-border-color: var(--vortex-border-subtle) !important;
+}
+
+/* ==============================================================================
+   1. Window Frame & Base Canvas Layout
+   ============================================================================== */
+
+#main-window {
+  background-color: var(--vortex-bg-base) !important;
+  color: var(--vortex-text-primary) !important;
+}
+
+/* Hide standard top window titlebar & menu redundancy */
+#titlebar {
+  appearance: none !important;
+  background: transparent !important;
+}
+
+#toolbar-menubar {
+  display: none !important;
+}
+
+/* ==============================================================================
+   2. Floating Web Content Viewport (The Canvas)
+   ============================================================================== */
+
+#browser {
+  background-color: var(--vortex-bg-base) !important;
+  padding: 0 !important;
+}
+
+#appcontent,
+.browserSidebarContainer,
+#tabbrowser-tabbox {
+  background-color: transparent !important;
+}
+
+/* The floating web page card */
+#tabbrowser-tabpanels {
+  background-color: transparent !important;
+  padding: 4px 10px 10px 0 !important;
+}
+
+:root[dir="rtl"] #tabbrowser-tabpanels {
+  padding: 4px 0 10px 10px !important;
+}
+
+.browserStack {
+  border-radius: var(--vortex-canvas-radius) !important;
+  overflow: hidden !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--vortex-border-subtle) !important;
+  background-color: #12131a !important;
+  transition: box-shadow 0.25s ease !important;
+}
+
+.browserStack:focus-within {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--vortex-border-active) !important;
+}
+
+/* Web content inner browser element */
+browser[type="content"] {
+  border-radius: var(--vortex-canvas-radius) !important;
+}
+
+/* ==============================================================================
+   3. Pill Omnibar (Floating Navigation Bar)
+   ============================================================================== */
+
+#nav-bar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 6px 14px !important;
+  margin: 0 !important;
+}
+
+/* Center and float the URL bar */
+#urlbar-container {
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  transition: max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#urlbar {
+  --urlbar-height: 38px !important;
+  --urlbar-min-height: 38px !important;
+  border-radius: 20px !important;
+  background-color: var(--vortex-bg-card) !important;
+  border: 1px solid var(--vortex-border-subtle) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  color: var(--vortex-text-primary) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#urlbar[focused="true"] {
+  border-color: var(--vortex-accent) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 0 2px var(--vortex-accent-glow) !important;
+  background-color: var(--vortex-bg-surface) !important;
+}
+
+#urlbar-background {
+  border-radius: 20px !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+#urlbar-input {
+  font-size: 13.5px !important;
+  text-align: center !important;
+  color: var(--vortex-text-primary) !important;
+}
+
+#urlbar[focused="true"] #urlbar-input {
+  text-align: start !important;
+}
+
+/* Navigation button minimalist icons */
+#nav-bar toolbarbutton {
+  border-radius: 10px !important;
+  color: var(--vortex-text-secondary) !important;
+  transition: all 0.2s ease !important;
+  padding: 4px !important;
+  margin: 0 2px !important;
+}
+
+#nav-bar toolbarbutton:hover {
+  background-color: var(--vortex-bg-hover) !important;
+  color: var(--vortex-text-primary) !important;
+}
+
+/* ==============================================================================
+   4. Vertical Cyber-Dock (Tabs Transformation)
+   ============================================================================== */
+
+/* If Firefox native horizontal tabs are still top-aligned, transform into vertical stack */
+#TabsToolbar {
+  background-color: transparent !important;
+  border-bottom: none !important;
+}
+
+/* Modern styling for tabs */
+.tabbrowser-tab {
+  border-radius: 10px !important;
+  margin: 3px 6px !important;
+  padding: 2px 4px !important;
+  transition: all 0.2s ease !important;
+  border: 1px solid transparent !important;
+}
+
+.tabbrowser-tab:hover {
+  background-color: var(--vortex-bg-hover) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.15)) !important;
+  border: 1px solid var(--vortex-border-active) !important;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.2) !important;
+}
+
+.tab-background {
+  border-radius: 10px !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.tab-label {
+  font-weight: 500 !important;
+  color: var(--vortex-text-secondary) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-label {
+  color: var(--vortex-text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Sleek close tab button */
+.tab-close-button {
+  border-radius: 50% !important;
+  padding: 3px !important;
+  opacity: 0.6 !important;
+  transition: all 0.2s ease !important;
+}
+
+.tab-close-button:hover {
+  opacity: 1 !important;
+  background-color: rgba(239, 68, 68, 0.25) !important;
+  color: #ef4444 !important;
+}
+
+/* Hide tab line indicator from Firefox standard theme */
+.tab-line {
+  display: none !important;
+}
+
+/* ==============================================================================
+   5. Custom Scrollbars & Popups
+   ============================================================================== */
+
+menupopup, panel {
+  --panel-background: var(--vortex-bg-surface) !important;
+  --panel-border-color: var(--vortex-border-subtle) !important;
+  --panel-border-radius: 12px !important;
+}
+
+.menupopup-arrowcontent {
+  border-radius: 12px !important;
+  border: 1px solid var(--vortex-border-subtle) !important;
+  background: var(--vortex-bg-surface) !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6) !important;
+}
+
+menuitem, menu {
+  border-radius: 8px !important;
+  margin: 2px 4px !important;
+  padding: 6px 10px !important;
+  color: var(--vortex-text-primary) !important;
+}
+
+menuitem:hover, menu:hover {
+  background-color: var(--vortex-bg-hover) !important;
+  color: var(--vortex-accent) !important;
+}
