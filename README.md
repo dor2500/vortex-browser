@@ -9,6 +9,26 @@
   <i>A next-generation browser built on Mozilla's Gecko Quantum engine with floating canvas, spaces, and cyber-minimalist aesthetics.</i>
 </p>
 
+<p align="center">
+  <img src="docs/screenshots/style-vortex.png" width="900" alt="Vortex Browser Floating Canvas & Picture-in-Picture">
+</p>
+
+---
+
+## ⚡ התקנה מהירה בפקודה אחת (1-Click Install)
+
+### 🪟 Windows (ב-PowerShell):
+```powershell
+irm https://raw.githubusercontent.com/dor2500/vortex-browser/main/install.ps1 | iex
+```
+*ההתקנה מגדירה את הדפדפן, יוצרת קיצור דרך בשולחן העבודה ובתפריט ההתחלה ומפעילה את Vortex מיד.*
+
+### 🍏 macOS / 🐧 Linux (בטרמינל):
+```bash
+curl -fsSL https://raw.githubusercontent.com/dor2500/vortex-browser/main/install.sh | bash
+```
+*ב-macOS נוצרת אפליקציית `Vortex Browser.app` וב-Linux נוצר `.desktop` launcher ופקודת `vortex` ב-Terminal.*
+
 ---
 
 ## 🌟 סקירה כללית (Overview)
